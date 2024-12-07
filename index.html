@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="cont w-75 m-auto py-5">
+        <div class="form-floating mb-3">
+            <input oninput="validateProduct(this)" type="text" class="form-control" id="productName"
+                placeholder="name@example.com">
+            <div class="alert alert-danger d-none p-1 mt-2" role="alert">
+                start with capital !
+            </div>
+            <label for="productName">Product Name : </label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input oninput="validateProduct(this)" type="number" class="form-control" id="productPrice"
+                placeholder="Password">
+            <div class="alert alert-danger d-none p-1 mt-2" role="alert">
+                not less than 1000
+            </div>
+            <label for="productPrice">Product Price : </label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input oninput="validateProduct(this)" list="Category" type="text" class="form-control" id="productCategory"
+                placeholder="name@example.com">
+            <div class="alert alert-danger d-none p-1 mt-2" role="alert">
+                choose from list
+            </div>
+            <label for="productCategory">Product Category : </label>
+
+            <datalist id="Category">
+                <option value="Tv"></option>
+                <option value="Mobile"></option>
+                <option value="Laptoops"></option>
+                <option value="Screens"></option>
+                <option value="Electronics"> </option>
+            </datalist>
+        </div>
+
+        <div class="form-floating mb-3">
+            <textarea oninput="validateProduct(this)" type="text" class="form-control" id="productDescription"
+                placeholder="name@example.com"></textarea>
+            <div class="alert alert-danger d-none p-1 mt-2" role="alert">
+                not less than 10 letters
+            </div>
+            <label for="productDescription">product Description : </label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="file" class="form-control" id="productImage" placeholder="name@example.com">
+            <div class="alert alert-danger d-none p-1 mt-2" role="alert">
+                image should be from product folder
+            </div>
+            <label for="productImage">Product Image : </label>
+        </div>
+
+        <button id="AddBtn" onclick="addProduct();" class="btn btn-success text-white ">Add Product</button>
+        <button id="updateBtn" onclick="updateProducts()" class="btn btn-warning text-white d-none ">Update
+            Product</button>
+        <div class="cont1">
+            <input oninput="search()" type="text" placeholder="Search...." class="form-control my-2 mt-3" name=""
+                id="searchItem">
+            <div id="rowData" class="row py-5">
+
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
